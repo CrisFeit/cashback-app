@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: '/cashback/'
+  publicPath: '/cashback-app/'
 }

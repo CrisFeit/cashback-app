@@ -37,15 +37,14 @@ export default {
       var userAuth = auth.currentUser;
       db.collection('users').doc(this.user.cpf).delete()
       .then(()=>{
-        auth.signOut()
-        .then( () => {
-           this.$router.push({ name : 'Home'})
-           userAuth.delete().then(function() {
+        auth.signOut().then( () => {
+          this.$router.push({ name : 'Home'})
+            userAuth.delete()
           }).catch(function(err) {
             console.log(err);
-          this.$router.push({ name: "Home" })
+            this.$router.push({ name: "Home" })
         });
-        })
+        
       })
     }
   },
