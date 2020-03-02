@@ -35,17 +35,22 @@ export default {
     deleteProfile(){
       this.loading = true
       var userAuth = auth.currentUser;
-      db.collection('users').doc(this.user.cpf).delete()
-      .then(()=>{
-        auth.signOut().then( () => {
+      if(this.user){
+
+        db.collection('users').doc(this.user.cpf).delete()
+        .then(()=>{
+          auth.signOut()
+        .then( () => {
           this.$router.push({ name : 'Home'})
-            userAuth.delete()
+          userAuth.delete()
+          .then(()=>{
+            return    
           }).catch(function(err) {
-            console.log(err);
-            this.$router.push({ name: "Home" })
-        });
-        
+                console.log(err);
+          });
+        })    
       })
+    }
     }
   },
   created(){
