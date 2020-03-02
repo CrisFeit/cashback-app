@@ -1,0 +1,120 @@
+.nav{
+  display: flex;
+  justify-content: space-around;
+  color: $color-text-light;
+  background-color: $color-background-dark;
+  transition: width 0.4s ease;
+  width: 100%;
+  .menu-name,.nav-title{
+    display: none;
+  }
+  &>.menu-item{
+    display: flex;
+    
+    .icons{
+      margin: auto;
+      position: relative;
+    }
+      &:hover{
+        background-color: darken($color-background-dark,5%);
+      }
+      &:hover,&.-active {
+        .icons{ 
+          color: $color-primary ;
+        }
+        .menu-name{
+          text-shadow: 0 0 4px $color-text-light;
+        }
+      }
+    .amount{
+      position: absolute;
+      bottom: -.3em;
+      right: -.3em; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: rem(16);
+      width: 25px;
+      height: 25px;
+      padding: 5px;
+      border-radius: 50%;
+      color: $color-text-light;
+      text-shadow: 0 0 3px $color-text-light;
+      background-color: $color-primary;
+    }
+  }
+  .icons{
+  @extend %icons-frame;
+  min-width: 50px;
+  &.store{
+    &:before{
+      content: fa-content($fa-var-store);
+    }
+  }
+  &.cart{
+    &:before{
+      content: fa-content($fa-var-shopping-bag);
+    }
+  }
+  &.orders-amount{
+    &:before{
+      content: fa-content($fa-var-coins);
+    }
+  }
+  &.profile{
+    &:before{
+      content: fa-content($fa-var-user);
+    }
+  }
+  &.info{
+    &:before{
+      content: fa-content($fa-var-info-circle);
+    }
+  }
+  }
+  @include breakpoint(desktop){
+    flex-direction: column;
+    width: 30%;
+    justify-content: flex-start;
+    &>.nav-title{
+      font: rem(18)/1 $font-suport;
+      text-transform: uppercase;
+      width: 100%;
+      margin: 1em auto 0;
+      display: flex;
+      text-align: center;
+      justify-content: space-around;
+      align-items: center;
+      background-color: darken($color-background-dark,5%);
+        .icons{
+          transform: rotate(0);
+          transition: transform .8s;        
+          &:after{
+            content: fa-content($fa-var-angle-double-right);
+          }
+        }
+      }
+    
+    &>.menu-item{
+      margin: 0 auto;
+      padding: .5em;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      .icons{
+        margin: auto .5em auto 0;
+      }
+    }
+    &:hover{
+      width:  100% !important;
+      &>.nav-title .icons{
+        transform: rotate(-630deg);
+        color: $color-primary;
+        text-shadow: 0 0 8px $color-primary ;
+      }
+      .menu-name{
+        display: block;
+      }
+    }
+  }
+}

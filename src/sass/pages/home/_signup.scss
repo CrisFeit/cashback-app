@@ -1,0 +1,10 @@
+.signup{
+  margin: auto;
+  width: 100%;
+  max-width: 100%;
+  @extend %form-default;
+  @include breakpoint(desktop){
+    margin: auto 0 auto auto; 
+    max-width: 40%;
+  }
+}

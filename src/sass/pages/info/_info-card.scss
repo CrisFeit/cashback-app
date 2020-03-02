@@ -1,0 +1,106 @@
+.info{
+  .info-warning{
+    @extend %box-dark;
+    display: flex;
+    flex-wrap: wrap;
+    margin: .1em auto;
+    padding: .3em;
+    text-align: center;
+    border-radius: 25px;
+    &-title{
+      width: 100%;
+      margin: auto;
+      text-align: center;
+      font: rem(20)/1 $font-suport;
+      text-shadow: 0 0 4px $color-text-light;
+    }
+    &-text{
+      font-size: rem(13);
+      width: 100%;
+      padding: .5em;
+    }
+  }
+  &>.info-card{
+    @extend %box-shadow-light;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: .5em auto;
+    padding: 1em;
+    @include breakpoint(desktop){
+      width: 75%;
+    }
+
+    .info-top{
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      @include breakpoint(desktop){
+        flex-wrap: nowrap;
+      }
+    }
+    .info-img{
+      padding: 1em;
+      display: flex;
+      max-width: 100px;
+      text-align: center;
+      margin: 0 auto;
+      @include breakpoint(desktop){
+        flex: 1 1;
+        max-width: 250px;
+        }
+        .info-icon{
+          border-radius: 50%;
+          font-size: rem(100);
+          color: $color-primary;
+          margin: auto;
+          &:before{
+            content: fa-content($fa-var-user-circle);
+          }
+        }
+    }
+    .info-info{
+      vertical-align: middle;
+      @include breakpoint(desktop){
+        flex: 2.5 2;
+        }
+    }
+    .info-item{
+      margin: 1em 0;
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+
+    }
+    .info-text{
+      margin-left: 1em;
+    }
+    .social {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      font-weight: bold;
+      .social-media{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        margin: 1.5em auto;
+        .link{
+          text-align: center;
+          &:before{
+            @extend %icons-soft-dark;
+            font-weight: lighter;
+          }
+          .link-text{
+            font: rem(14)/1 $font-main;
+            margin-top: 1.5em;
+          }
+        }
+      }
+    }
+  }
+}

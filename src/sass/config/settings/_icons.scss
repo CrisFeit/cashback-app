@@ -1,0 +1,13 @@
+
+@import '@/assets/fonts/fontawesome/scss/fontawesome.scss';
+@import '@/assets/fonts/fontawesome/scss/solid.scss';
+@import '@/assets/fonts/fontawesome/scss/brands.scss';
+
+%icons{
+  @extend %fa-icon;
+  @extend .fas;
+}
+%icons-social{
+  @extend %fa-icon;
+  @extend .fab;
+}

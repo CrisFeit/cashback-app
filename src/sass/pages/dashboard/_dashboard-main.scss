@@ -1,0 +1,58 @@
+.dashboard{
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(12,1fr);
+  grid-template-rows: repeat(20,5vh);
+  overflow: hidden;
+  
+  &>.main{
+    display: flex;
+    overflow-y: auto;
+    grid-row-end: 21;
+    flex-wrap: wrap;
+    margin-bottom: 5em;
+    @include breakpoint(desktop){
+      margin-bottom: 1em;
+        grid-column-start: 2;
+        grid-column-end: 13;
+        grid-row-start: 4;
+        grid-row-end: 19;
+        overflow-y: auto;
+        @include scrollbar(15px,$color-primary);
+      }
+  }
+  &>.nav{
+      z-index: z("nav");
+      grid-column-start: 1;
+      grid-column-end: 13;
+      grid-row-start: 19;
+      grid-row-end: 21;
+    @include breakpoint(desktop){
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 4;
+      grid-row-end: 19;
+
+      &:hover + .main {
+        grid-column-start: 3;
+      } 
+    }
+  }
+  .page-title{
+    font: rem(30)/1 $font-suport;
+    padding: 0 1em;
+    text-align: center;
+    margin: 0 auto;
+    @extend %underline-gradient;
+  }
+  &>.footer{
+    @include breakpoint(mobile){
+      display: none;
+    }
+  }
+}
+    @include breakpoint(desktop){
+      body {
+        overflow: initial;
+      }
+}

@@ -1,0 +1,18 @@
+.home{
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(12,1fr);
+  grid-template-rows: repeat(20,5vh);
+  overflow: hidden;
+  &>.main{
+    display: flex;
+    overflow-y: auto;
+    grid-row-end: 21;
+    background: url('../assets/img/banner-home-mobile.jpg') center center / cover no-repeat;
+      @include breakpoint(desktop){
+        grid-row-end: 19;
+        background: url('../assets/img/banner-home-desktop.jpg') center center / 115% no-repeat;
+        overflow: hidden;
+      }
+  }
+}

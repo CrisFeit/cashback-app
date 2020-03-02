@@ -1,0 +1,13 @@
+.shop{
+  &>.container{
+    min-width: 100%;   
+  }
+}
+
+@include breakpoint(desktop){
+  @import './desktop/shop-desktop-base';
+}
+@include breakpoint(mobile){
+  @import './mobile/shop-mobile-base';
+}
+

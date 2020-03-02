@@ -1,0 +1,12 @@
+
+.main{
+  width: 100%;
+  grid-column-start: 1;
+  grid-column-end: 13;
+  grid-row-start: 4;
+  grid-row-end: 19;
+}
+.header,.footer,.main{
+  padding: 1em;
+  box-sizing: border-box;
+}

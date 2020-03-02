@@ -1,0 +1,120 @@
+.trees {
+  @include filters-box;
+  &__title {
+    @include filter-nav-title;
+  }
+  &__box {
+    @include filters-selectors;
+  }
+  
+
+  .trees__box-resize{
+  justify-content: center;
+  position: relative;
+
+  }
+  .trees__branch {
+    text-align: center;
+    height: auto;
+    margin: .1em .3em;
+  }
+  .trees__branch-category{
+    display: flex;
+    overflow: hidden;
+    >label{
+      z-index: 3;
+      box-shadow: 1px 0 0.5em 0.5em #fff;
+    }
+  }
+
+  &__label {
+    &--active .trees__figure {
+        box-shadow: 0 0 0.8em $filter-brand;
+        border-color: $filter-brand;
+      }
+      &-title {
+        margin-top: 0.3em;
+        width: auto;
+        font: rem(16)/1 $font-suport;
+        text-transform: uppercase;
+
+      }
+    }
+    &__figure {
+      margin: auto;
+      border-radius: 50%;
+      padding: 2px;
+      border: 2px solid $filter-silver;
+      box-sizing: border-box;
+      width: 80px;
+      height: 80px;
+      @media (min-width:680px){
+        width: 110px;
+        height: 110px;
+        }
+        @media (max-width:560px){
+        width: 100px;
+        height: 100px;
+        }
+        @media (max-width:460px){
+        width: 90px;
+        height: 90px;
+        }
+        @media (max-width:400px){
+        width: 80px;
+        height: 80px;
+        }
+        @media (max-width:360px){
+        width: 70px;
+        height: 70px;
+        }
+        @media (max-width:340px){
+          width: 65px;
+          height: 65px;
+        }
+    }
+    &__img {
+      display:  inline-block;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      vertical-align: middle;
+    }
+  }
+
+.trees__sub-box {
+  text-align: center;
+  z-index: 2;
+  display: flex;
+  overflow-x: auto;
+  height: 100%;
+  padding-left: 1em;
+  > label{
+    white-space: nowrap;
+  }
+}
+.trees__sub-label {
+  font-size: calc(14rem/16);
+  display: flex;
+  margin:  0 auto 0.2em auto;
+  padding: 0.3em 1em;
+  border-radius: 25px;
+  background-color: white;
+  align-self: center;
+  height: auto;
+  justify-self: center;
+  line-height: 1.5;
+  &:hover {
+    box-shadow: 0 0 0.5em $filter-hover-dark;
+  }
+
+  &--active {
+    box-shadow: 0 0 .2em $filter-brand;
+    border-color: $filter-brand;
+    color: snow;
+    background-color: $filter-brand;
+  }
+}

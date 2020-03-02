@@ -1,0 +1,44 @@
+%font-flex{
+    @media (max-width: 320px){
+      font-size: .9rem;
+    }
+    @media (min-width: 321px) and (max-width: 360px){
+      font-size: .920rem;
+    }
+    @media (min-width: 361px) and (max-width: 400px){
+      font-size: .930rem;
+    }
+    @media (min-width: 401px) and (max-width: 540px){
+      font-size: .940rem;
+    }
+    @media (min-width: 541px) and (max-width: 640px){
+      font-size: .950rem;
+    }
+    @media (min-width: 641px) and (max-width: 720px) {
+      font-size: .960rem;
+    }
+    @media (min-width: 721px)  and (max-width: 768px) {
+      font-size: .970rem;
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      font-size: .980rem;
+    }
+    @media (min-width: 1025px) and (max-width: 1279px) {
+      font-size: .900rem;
+    }
+    @media (min-width: 1280px) and (max-width: 1440px) {
+      font-size: 1rem;
+    }
+    @media (min-width: 1441px) and (max-width: 1680px) {
+      font-size: 1.020rem;
+    }
+    @media (min-width: 1681px) and (max-width: 1920px) {
+      font-size: 1.040rem;
+    }
+    @media (min-width: 1921px) and (max-width: 2160px) {
+      font-size: 1.060rem;
+    }
+    @media (min-width: 2161px) {
+      font-size: 1.080rem;
+    }
+}

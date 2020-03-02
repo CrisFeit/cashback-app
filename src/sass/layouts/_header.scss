@@ -1,0 +1,85 @@
+.header{
+  grid-column-start: 1;
+  grid-column-end: 13;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: $color-text-light;
+  background-color: $color-background-dark;
+      @include breakpoint(desktop){
+        justify-content: space-between;    
+      }
+  &>.logo{
+    height: 100%;
+    margin: auto;
+    text-align: center;
+    z-index : z("logo");
+    background-color: $color-background-dark;
+    @include breakpoint(desktop){
+      margin: 0;
+        &:hover{
+          transform: scale(1.1);
+        }
+    }
+    .logo-img{
+      max-height: 100%;
+      max-height: -webkit-fill-available;
+    }
+  }
+      .link{
+        position: absolute;
+        margin: auto;
+        &.button-login,&.button-user{
+          left: 1em;  
+          @include breakpoint(desktop){
+            margin-left: auto;
+          }
+        }
+        &.button-login{
+          @extend %button-flat;
+        }
+        &.button-user{
+          max-width: 33%;
+          text-align: center;
+          vertical-align: middle;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+              @include breakpoint(desktop){
+                height: 100%;
+              }
+          &:hover{
+            text-shadow: 0 0 2px $color-text-light;
+            }
+          .user-name{
+            width: 100%;
+            margin: auto;
+            font-size: rem(15);
+          }
+          .user-avatar{
+            font-size: rem(25);
+            display: block;
+            margin:   0 auto .5em;
+            @extend %icons;
+            &::before{
+              @extend %icons-flat;
+              padding: 6px;
+              margin-bottom: 0.1em;
+              content: fa-content($fa-var-user-circle);
+            }
+          }
+        }
+        &.button-signup,&.button-logout{
+          @extend %button-flat;
+          right: 1em;
+        }
+
+          @include breakpoint(desktop){
+            position: static;
+              margin: auto 0 auto 2em;
+          }
+      }
+}

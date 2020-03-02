@@ -1,0 +1,89 @@
+.orders-shelf{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 1em;
+  width: 100%;
+  height: initial;
+  @include breakpoint(mobile){
+    justify-content: center;
+  }
+  &>.orders-card{
+    @extend %box-shadow-light;
+    width: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: auto;
+    margin: .5em 0;
+      @include breakpoint(mobile){
+        width: 100%;
+        margin: 1em ;
+      }
+    .order-title{
+      margin: auto;
+      width: 100%;
+      padding: .5em;
+      text-align: center;
+      @extend %box-dark;
+      
+    }
+    .orders-date{
+      text-shadow: 0 0 4px $color-text-light;
+    }
+    .left,.right{
+      width: 45%;
+      padding: .5em;
+      margin: .5em;
+      font-size: rem(15);
+      @include breakpoint(mobile){
+        width: 100%;
+        margin: 0 .5em;
+      }
+    }
+    .orders-cod{
+      width: 100%;
+      display: flex;
+      margin: .5em .5em 0;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 .5em ;
+      font-weight: bold;
+      
+      .order-text{
+        font-weight: initial;
+      }
+    }
+    .orders-item{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 0 1em 0;
+      font-weight: bold;
+      .order-status{
+        color: $warning-text;
+      }
+      .order-text{
+        font-weight: initial;
+      }
+    }
+    .order-button{
+      float: right;
+      font-size: rem(15);
+      margin: .5em 0;
+      &.-disabled{
+        @extend %button-disabled;
+      }
+      &.cancel{
+        &:before{
+          @extend %icons;
+          @extend %icons-frame;
+          padding: 0 .2em;
+            content: fa-content($fa-var-times-circle);
+          }
+        @extend %button-round;
+        @extend %button-soft-light;
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.login{
+  margin: auto;
+  width: 100%;
+  max-width: 100%;
+  @extend %form-default;
+  .redirect{
+    color: $color-grey;
+    font-size: rem(15);
+    margin: 1em auto;
+    .redirect-link{
+      display: block;
+      color: $color-primary;
+      text-decoration: underline;
+        &:hover{
+          text-shadow: 0 0 3px $color-primary;
+        }
+          @include breakpoint(desktop){
+            display: inline;
+          }
+    }
+  }
+  @include breakpoint(desktop){
+    margin: auto 0 auto auto; 
+    width: auto;
+    max-width: 40%;
+  }
+}

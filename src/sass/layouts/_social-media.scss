@@ -1,0 +1,41 @@
+
+.social-media {
+    .link {
+      @extend %icons-social;
+      &.facebook {
+        &:before {
+          content: fa-content($fa-var-facebook);
+        }
+      }
+      &.instagram {
+        &:before {
+          content: fa-content($fa-var-instagram);
+        }
+      }
+      &.twitter {
+        &:before {
+          content: fa-content($fa-var-twitter);
+        }
+      }
+      &.youtube {
+        &:before {
+          content: fa-content($fa-var-youtube);
+        }
+      }
+      &.linkedin {
+        &:before {
+          content: fa-content($fa-var-linkedin);
+        }
+      }
+      &.github {
+        &:before {
+          content: fa-content($fa-var-github);
+        }
+      }
+      &.codepen {
+        &:before {
+          content: fa-content($fa-var-codepen);
+        }
+      }
+    }
+  }

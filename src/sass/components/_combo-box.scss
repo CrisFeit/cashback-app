@@ -1,0 +1,17 @@
+
+%combo-box{
+  text-transform:capitalize;
+  font-weight: 400;
+  color: var(--ui-dark-middle);
+  letter-spacing: 0.03em;
+  padding: 0.5em 0;
+  -webkit-appearance: none;
+}
+%combo-options{
+  display: block;
+  width: 100%;
+  height: auto;
+  font-size: calc(13rem/16);
+  text-transform: capitalize;
+  cursor: pointer;
+}

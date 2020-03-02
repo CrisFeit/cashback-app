@@ -1,0 +1,47 @@
+.info{
+  .tec{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;    
+    .tec-media {
+      width: 100%;
+      font-weight: bold;
+      // text-align: center;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      .tec-item{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 1em auto;
+        .tec-link,.regular-link{
+          text-align: center;
+          &:before,.text-icon{
+            @extend %icons-soft-dark;
+            font-weight: lighter;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            margin: auto;
+            font-size: 10px;
+          }
+          &:before{
+            font-size: 20px;
+           }
+          
+          .tec-link-text{
+            font: rem(14)/1 $font-main;
+            margin-top: 1.5em;
+          }
+        }
+    }
+  }
+}
+}

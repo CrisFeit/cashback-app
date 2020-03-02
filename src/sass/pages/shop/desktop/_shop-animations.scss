@@ -1,0 +1,74 @@
+.slide-down-enter-active , .slide-down-leave-active{
+transition: all 0.4s,
+}
+.slide-down-enter, .slide-down-leave-to {
+  opacity: 0;
+  transform: translateY(-15px);
+}
+
+@keyframes fadeIn{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+.loading{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	z-index: 3;
+	background-color: $loader-background;
+	display: flex;
+}
+
+.loading__box {
+	position: relative;
+	margin: auto;
+	height: 110px;
+	width: 110px;
+	border-radius: 50%;
+	background: #111 url('http://edbr.vteximg.com.br/arquivos/logo-dourado-desk.png') center center / 60% no-repeat;
+	&::before{
+		content: "";
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		background:  linear-gradient(135deg, transparent,transparent,$loader-background,transparent,transparent);
+		border-radius: 50%;
+		background-size: 250% 250%;
+		animation: camuflage 1s 0.1s ease;
+	}
+}
+.loading__spinner {
+	margin: -5.4% -5.4% ;
+	height: 120px;
+	width: 120px;
+	border-radius: 50%;
+	border-top: 2px solid #333;
+	border-right: 2px solid transparent;
+	animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+
+@keyframes camuflage{
+	from{
+		background-position: 100% 100%;
+	}
+	to{
+		background-position: 0% 0%;
+	}
+}

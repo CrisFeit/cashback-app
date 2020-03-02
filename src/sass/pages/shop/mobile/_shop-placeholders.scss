@@ -1,0 +1,158 @@
+
+@mixin under-line{
+  &::after{
+    content: "";
+    display: block;
+    height: 5px;
+    margin: auto;
+    padding: 5px 0;
+    width: 100%;
+    background: white linear-gradient(to right,white, $filter-gold, white) center/ 100%  1px no-repeat;
+  }
+}
+@mixin brand-under-line{
+    content: "";
+    display: block;
+    height: 5px;
+    margin: auto;
+    padding: 5px;
+    width: 100%;
+    background:  linear-gradient(to right,#0f0f0f,$filter-gold,#0f0f0f) center/ 100%  1px no-repeat;
+}
+@mixin overflow-shadow{
+  &::before{
+    content: "";
+    display: block;
+    position: absolute;
+    box-shadow: 1em 0 .8em .5em snow;
+    height: 80%;
+    left: -5%;
+    bottom: 3%;
+    z-index: 1;
+}
+  
+  &::after{
+    content: "";
+    display: block;
+    position: absolute;
+    box-shadow: -1em 0 .8em .5em snow;
+    height: 80%;
+    right: -5%;
+    bottom: 3%;
+    z-index: 1;
+  }
+}
+@mixin hover-default{
+  &:hover{
+    box-shadow: 0 0 0.5em $filter-hover-dark;
+  }
+}
+
+@mixin filters-box{
+  position: relative;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  @include overflow-shadow;
+}
+@mixin filters-title{
+  font-size: calc(17rem/16);
+  height: max-content;
+  color: $filter-dark-middle;
+  font-weight: bold;
+}
+
+@mixin filters-selectors{
+  display: flex;
+  overflow-x: auto;
+  width: 100%;
+  font-size: calc(15rem/16);
+  color: $filter-dark-middle;
+  box-sizing: border-box;
+}
+
+@mixin filters-label{
+  width: auto;
+  height: auto;
+  cursor: pointer;
+  margin: 0.5em 0.7em;
+  padding: 0.3em 0.5em;
+  box-sizing: border-box;
+  border-radius: 30px;
+  white-space: nowrap;
+}
+@mixin scroll-bar{
+  &::-webkit-scrollbar {
+    width: 0.5em;
+    height: 0.5em;
+    background-color: #fff;
+  }
+  &::-webkit-scrollbar-thumb {
+    border: 0.5em solid $filter-brand;
+    border-radius: 45px;
+  }
+}
+
+@mixin little-button{
+  position: absolute;
+  right: 0.3em;
+  top: 0.2em;
+  height: auto;
+  padding: 0.3em 0.5em;
+  font-size: calc(15rem/16);
+  padding: 0.2em 0.4em;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background-color: $filter-brand;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:active{
+    font-weight: bold;
+  }
+}
+@mixin filter-nav-title{
+  position: relative;
+  margin: auto;
+  text-align: center;
+  padding: .3em  0;
+  background-color: #0f0f0f;
+  color: snow;
+  text-transform: uppercase;
+  text-shadow: 0 0 5px snow;
+  font-weight: bold;  
+  font-size: calc(19rem / 16);
+  z-index: 2;
+  width: 100%;
+}
+
+@mixin round-thumbs{
+  width: 33px;
+  height: 33px;
+  @media (min-width:680px){
+    width: 45px;
+    height: 45px;
+    }
+    @media (max-width:560px){
+    width: 42px;
+    height: 42px;
+    }
+    @media (max-width:460px){
+    width: 40px;
+    height: 40px;
+    }
+    @media (max-width:400px){
+    width: 38px;
+    height: 38px;
+    }
+    @media (max-width:360px){
+    width: 35px;
+    height: 35px;
+    }
+    @media (max-width:340px){
+      width: 30px;
+      height: 30px;
+    }
+}
+

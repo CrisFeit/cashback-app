@@ -1,0 +1,67 @@
+
+
+%button-disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+%button-frame{
+  text-align: center;
+  vertical-align: middle;
+  font-size: rem(18);
+  padding: .4em .8em ;
+  cursor: pointer;
+}
+
+%button-round{
+  @extend %button-frame;
+  border-radius: 50px;
+}
+%button-square{
+  @extend %button-frame;
+  border-radius: 10px;
+}
+
+%button-flat{
+  @extend %button-round;
+  @extend %box-gradient-primary;
+  color: $color-text-light;
+  &:active,&.-disabled{
+    box-shadow:  inset .3em .3em .3em darken($color-box-dark,7%), 
+    inset -.3em -.3em .3em lighten($color-primary,12%);
+  }
+}
+
+%button-soft{
+  @extend %button-round;
+  @extend %neumorphism; 
+}
+
+%button-soft-light{
+  color: $color-primary;
+  box-shadow:   .2em .2em .2em darken($color-white,60%), 
+  -.2em -.2em .2em darken($color-white,5%);
+  
+  &:active,&.-disabled{
+    box-shadow:  inset .2em .2em .2em darken($color-white,60%), 
+    inset -.2em -.2em .2em darken($color-white,5%);
+  }
+}
+
+%button-active{
+  @extend %box-gradient-primary;
+}
+
+@mixin button-custom($text,$bg){
+  @extend %button-round;
+  color: $text;
+  background: $bg;
+  &:hover{
+    text-shadow: 0 0 8px $text;
+  }
+    &:active,&.-disabled{
+      box-shadow:  inset .3em .3em .3em darken($color-box-dark,7%), 
+      inset -.3em -.3em .3em lighten($bg,12%);
+    }
+}

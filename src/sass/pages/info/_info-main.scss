@@ -1,0 +1,8 @@
+.dashboard{
+  &>.info{
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: auto;
+    overflow-y: auto;
+  }
+}

@@ -1,0 +1,44 @@
+%form-frame{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  color: $color-text-light;
+  background-color: $color-background-dark;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+%form-default{
+  &>.form{
+    @extend %form-frame;
+    .loading-wrap{
+      @extend %loadingBar-wrap;
+        .loading-bar {
+          @extend %loadingBar;
+        }
+    }
+    .field{
+      @extend %fieldset;
+      text-align: center;
+    }
+    .input{
+      @extend %input;
+        &.-labelUp{
+          @extend %labelUp;
+        }
+    }
+    .label{
+      @extend %label-inside;
+    }
+    .button-submit{
+      @extend %button-flat;
+    }
+    .feedback{
+      @extend %feedback-text;
+    }
+  }
+}

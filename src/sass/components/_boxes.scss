@@ -1,0 +1,30 @@
+%neumorphism{
+  box-shadow:  .3em .3em .3em $color-box-dark, 
+            -.3em -.3em .3em $color-box-light;
+  &:active{
+    box-shadow:  inset .3em .3em .3em $color-box-dark, 
+                inset -.3em -.3em .3em $color-box-light;
+  }
+}
+%box-gradient-primary{
+  background:  linear-gradient(135deg, lighten($color-primary,10%),$color-primary);
+  &:hover{
+    text-shadow: 0 0 10px $color-text-light;
+  }
+}
+%box-gradient-secondary{
+  background:  linear-gradient(135deg, lighten($color-secondary,10%),$color-secondary);
+}
+
+%box-dark{
+  color: $color-text-light;
+  background: $color-background-dark;
+}
+
+%box-light{
+  color: $color-text-dark;
+  background: $color-background-light;
+}
+%box-shadow-light{
+  box-shadow: 0 5px 15px 0 #d0d0d0;
+}

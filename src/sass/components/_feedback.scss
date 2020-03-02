@@ -1,0 +1,12 @@
+%feedback-text{
+    width: 100%;  
+    min-height: 1.5em;
+    color: $color-primary;
+    text-shadow: 0 0 3px $color-primary;
+    
+    &.-danger{
+      color: $danger-text;
+      text-shadow: 0 0 2px $danger-text;
+    }
+    
+}

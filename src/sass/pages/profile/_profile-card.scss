@@ -1,0 +1,60 @@
+.profile{
+  &>.profile-card{
+    @extend %box-shadow-light;
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    margin: .5em auto;
+    padding: 1em;
+    @include breakpoint(desktop){
+      width: 80%;
+      flex-wrap: nowrap;
+    }
+    .profile-img{
+      flex: 1 1;
+      padding: 1em;
+      display: flex;
+        .profile-icon{
+          border-radius: 50%;
+          font-size: rem(100);
+          color: $color-primary;
+          margin: auto;
+          &:before{
+            content: fa-content($fa-var-user-circle);
+          }
+        } 
+    }
+    .profile-info{
+      flex: 2.5 2;
+      vertical-align: middle;
+    }
+    .profile-item{
+      margin: 1em 0;
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+
+    }
+    .profile-text{
+      margin-left: auto;
+    }
+    .profile-button{
+      float: right;
+      font-size: rem(15);
+      margin: .5em 0;
+      &.-disabled{
+        @extend %button-disabled;
+      }
+      &.cancel{
+        &:before{
+          @extend %icons;
+          @extend %icons-frame;
+          padding: 0 .2em;
+            content: fa-content($fa-var-times-circle);
+          }
+        @extend %button-round;
+        @extend %button-soft-light;
+      }
+    }
+  }
+}

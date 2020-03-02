@@ -1,0 +1,63 @@
+
+@mixin tooltip($content: attr(data-tooltip), $direction: top, $z-index: 1001) {
+  position: relative;
+
+  &:before,
+  &:after {
+      display: none;
+      z-index: $z-index;
+  }
+
+  &:hover {
+      &:after { // for text bubble
+          content: $content;
+          display: block;
+          position: absolute;
+          height: 12px; // (makes total height including padding 22px)
+          padding: 6px;
+          font-size: 12px;
+          white-space: nowrap;
+          color: #fff;
+          text-shadow: 1px 1px #000;
+          background-color: #222;
+      }
+
+      @if ( $direction == 'top' ) {
+          &:before {
+              @include triangle(down, 6px, #222);
+              top: -6px;
+              margin-top: 0;
+              left: 47%;
+          }
+
+          &:after {
+              top: -28px;
+              left: 47%;
+              margin-left: -20px;
+          }
+      }
+
+      @else if ( $direction == 'bottom' ) {
+          &:before {
+              @include triangle(up, 6px, #222);
+              top: auto;
+              margin-top: 0;
+              bottom: -6px;
+              left: 47%;
+          }
+
+          &:after {
+              bottom: -28px;
+              left: 47%;
+              margin-left: -20px;
+          }
+      }
+  }
+}
+
+@mixin ellipsis {
+  // Create ellipsis
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

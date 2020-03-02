@@ -1,0 +1,119 @@
+.flag{
+  position: absolute;
+  right: 5%;
+  top: 1%;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 3;
+}
+.flag__item{
+  width: 100%;
+}
+.flag__text{
+  font-size: calc(13rem/16);
+  white-space: nowrap;
+}
+
+/*********************************
+  flag-side
+**********************************/
+.flag__discount--side{
+  background:$filter-discount;
+  color:white;
+  text-align:center;
+  // width:4rem;
+  line-height:3.1rem;
+}
+.flag__discount--side span{
+  padding: 0 .5em ;
+}
+.flag__discount--side:after{
+  content:" ";
+  border-top:1.5rem solid $filter-discount;
+  border-bottom:1.5rem solid $filter-discount;
+  border-left: 1rem solid transparent;
+  position:absolute;
+  top:0;
+  right:100%;
+  bottom:0;
+}
+
+/******************************
+   flag corner 
+******************************/
+
+.flag__discount--corner{
+  height: 3rem;
+  width: 5rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.flag__discount--corner span{
+  padding: 0 1rem;
+  display:block;  
+  background:$filter-discount;
+  color:white;
+  width:100%;
+  line-height:1.5rem;
+  text-align:center;
+}
+.flag__discount--corner span{
+  transform: rotate(45deg);
+}
+.flag__discount--corner span:after,
+.flag__discount--corner span:before{
+    content:" ";
+    display:block;
+    border-top:solid transparent 1.4rem;
+    position:absolute;
+    top:0;
+    bottom:0;
+}
+.flag__discount--corner span:before{
+  border-right:solid $filter-discount 2rem;
+  right:100%;
+}
+.flag__discount--corner span:after{
+  border-left:solid $filter-discount 2rem;
+  left:100%;
+}
+
+
+/*************************************
+  flag-dot
+**************************************/
+.flag__discount--dot span{
+  padding: 0 0.5em;
+}
+.flag__discount--dot{  
+  height: auto;
+  width:auto;
+  color:white;
+  text-align:center;
+  line-height:3rem;
+  background-color: $filter-discount;
+}
+.flag__discount--dot:before,
+.flag__discount--dot:after{
+  content:" ";
+  display:block;
+  position:absolute;
+  right:100%;
+}
+
+.flag__discount--dot:before{  
+  border-top:1.5rem solid transparent;
+  border-bottom:1.5rem solid transparent;
+  border-right: 1rem solid $filter-discount;
+  top:0;
+  bottom:0;
+}
+.flag__discount--dot:after{
+  height:0.4rem;
+  width:0.4rem;
+  background:white;
+  top:50%;
+  transform: translateY(-50%);
+  border-radius:50%;
+}

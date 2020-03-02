@@ -1,0 +1,7 @@
+.dashboard{
+  &>.orders{
+    max-height: fit-content;
+    height: auto;
+    overflow-y: auto;
+  }
+}

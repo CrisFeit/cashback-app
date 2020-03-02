@@ -1,0 +1,45 @@
+%underline-gradient{
+  &::after{
+    content: "";
+    display: block;
+    height: 5px;
+    margin: auto;
+    padding: 5px 0;
+    width: 100%;
+    background:  linear-gradient(to right,white, $color-primary, white) center/ 100%  1px no-repeat;
+  }
+}
+
+%underline-gradient-secondary-light{
+  &::after{
+    content: "";
+    display: block;
+    height: 5px;
+    margin: auto;
+    padding: 5px 0;
+    width: 100%;
+    background:  linear-gradient(to right,$color-background-light, $color-secondary, $color-background-light) center/ 100%  1px no-repeat;
+  }
+}
+%underline-gradient-dark{
+  &::after{
+    content: "";
+    display: block;
+    height: 5px;
+    margin: auto;
+    padding: 5px 0;
+    width: 100%;
+    background:  linear-gradient(to right,$color-background-dark, $color-primary, $color-background-dark) center/ 100%  1px no-repeat;
+  }
+}
+%underline-gradient-secondary-dark{
+  &::after{
+    content: "";
+    display: block;
+    height: 5px;
+    margin: auto;
+    padding: 5px 0;
+    width: 100%;
+    background:  linear-gradient(to right,$color-background-dark, $color-secondary, $color-background-dark) center/ 100%  1px no-repeat;
+  }
+}

@@ -1,0 +1,15 @@
+.observer__box{
+  width: 100%;
+  display: flex;
+  position: relative;
+  margin-bottom: 1em;
+}
+.observer__spinner{
+    margin: auto;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border-top: 2px solid $filter-gold;
+    border-right: 2px solid transparent;
+    animation: spinner .8s linear infinite;
+}

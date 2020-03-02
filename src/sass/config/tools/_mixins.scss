@@ -1,0 +1,43 @@
+@use "sass:map";
+
+@mixin breakpoint($point :desktop,) {
+    @if $point==mobile {
+        @media only screen and (max-width: map.get($breakpoints, "mobile")) {
+            @content;
+        }
+    }
+    @else if $point==desktop {
+        @media only screen and (min-width: map.get($breakpoints, "desktop")) {
+            @content;
+        }
+    }
+}
+
+
+@mixin device($point, $value: 0) {
+    @if $point==phone {
+        @media only screen and (max-width: 520px) {
+            @content;
+        }
+    }
+    @else if $point==tablet {
+        @media only screen and (min-width: 521px) and (max-width: 1080px) {
+            @content;
+        }
+    }
+    @else if $point==laptop {
+        @media only screen and (min-width: 1081px) and (max-width: 1440px) {
+            @content;
+        }
+    }
+    @else if $point==desktop {
+        @media only screen and (min-width: 1441px) {
+            @content;
+        }
+    }
+    @else {
+        @media only screen and ($point: $value) {
+            @content;
+        }
+    }
+}

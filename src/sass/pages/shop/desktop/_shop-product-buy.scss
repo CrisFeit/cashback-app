@@ -1,0 +1,130 @@
+.product__buy{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: $filter-dark-middle;
+  border-radius: 30px;
+  cursor: pointer;
+  margin: auto;
+  transform: translateY(120%);
+  transition: transform 0.4s;
+  text-align: center;
+  z-index: 10;
+
+    &--open{
+      transform: translateY(0);
+      }
+}
+
+.product__buy-button{
+  margin: auto;
+  text-align: center;
+  background-color: $filter-brand-dark; 
+  color: snow;
+  border-radius: 30px;
+  z-index: 2;
+  padding: 3% 16%;
+  font-size: calc(14rem/16);
+  cursor: pointer;
+  transition: box-shadow .3s;
+  box-shadow:   .2em .2em .2em darken($color-white,60%), 
+  -.2em -.2em .2em darken($color-white,5%);
+      &:hover{
+        font-weight: bolder;
+      }
+      &:active,&:target{
+        box-shadow:  inset .3em .3em .3em darken($color-box-dark,7%), 
+        inset -.3em -.3em .3em lighten($color-primary,12%);  
+    }
+    
+  &>.icons{
+    &:before{
+      content: fa-content($fa-var-shopping-bag);
+      margin-right: 1em;
+    }
+  }
+}
+
+.thumb__container{
+  background-color: rgba(255,255,255,0.7);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.thumb__title{
+  margin: auto;
+  width: 100%;
+  font-size: calc(13rem/16);
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: .5em;
+}
+
+.thumb__selection{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 0.5em;
+}
+
+.thumb__label{
+  margin: 0.3em;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 50%;
+    &--active{
+      transform: scale(1.1);
+      box-shadow: 0 0  0.8em $filter-brand-dark;
+      border: 1px solid $filter-brand-dark;
+    }
+      @media (min-width:1701px){
+      width: 40px;
+      height: 40px;
+      }
+      @media (max-width:1700px){
+      width: 35px;
+      height: 35px;
+      }
+      @media (max-width:1500px){
+      width: 30px;
+      height: 30px;
+      }
+      @media (max-width:1280px){
+      width: 22px;
+      height: 22px;
+      }
+      @media (max-width:1080px){
+      width: 18px;
+      height: 18px;
+      }
+      @media (max-width:900px){
+        width: 15px;
+        height: 15px;
+      }
+}
+
+.thumb__figure{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  margin: 0;
+  padding: 1px;
+  border: 2px solid $filter-silver;
+  box-sizing: border-box;
+    &:hover{
+      border-color: $filter-hover-dark;
+    }
+}
+
+.thumb__img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-size: 700%;
+  background-position: center;
+}

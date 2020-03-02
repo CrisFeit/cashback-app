@@ -1,0 +1,23 @@
+.shelf__container{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 30vh;
+  justify-content: center;
+  position: relative;
+}
+.shelf__observer{
+  position: relative;
+  bottom: -100%;
+}
+.shelf__empty{
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.shelf__empty-text{
+  margin: auto;
+  font-size: calc(25rem/16);
+  text-align: center;
+  @include under-line;
+}

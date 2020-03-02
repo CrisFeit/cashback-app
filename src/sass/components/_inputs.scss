@@ -1,0 +1,74 @@
+@mixin selection($color: #000, $bg-color: #b3d4fc) {
+  ::selection {
+      background-color: $bg-color;
+      color: $color;
+      text-shadow: none;
+  }
+}
+
+@mixin placeholder($color, $opacity:1) {
+  &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      color: $color;
+      opacity: $opacity;
+  }
+
+  &::-moz-placeholder { /* Firefox 19+ */
+      color: $color;
+      opacity: $opacity;
+  }
+
+  &:-ms-input-placeholder { /* IE 10+ */
+      color: $color;
+      opacity: $opacity;
+  }
+
+  &:-moz-placeholder { /* Firefox 18- */
+      color: $color;
+      opacity: $opacity;
+  }
+}
+
+
+
+%fieldset{
+  width: 100%;
+  overflow: hidden;  
+  vertical-align: middle;
+  position: relative;
+}
+
+%label-inside{
+  position: absolute;
+  pointer-events: none;
+  top: 30%;
+  left: 15%;
+  color: $color-grey-light;
+  font-size: rem(17);
+  transition: .3s ease-in-out;
+}
+%labelUp{
+  & + label{
+    top: 5%;
+    font-size: rem(14);
+    font-weight: normal;
+    color: $color-grey;
+  }
+}
+
+%input{
+  position: relative;
+  width: 80%;
+  font-size: 1em;
+  padding: 1em 1em 0.2em;
+  outline: 0;
+  margin: 0.5em auto ;
+  border-bottom : 1px solid $color-grey;
+  border-width: 90%;
+  background: transparent;
+
+  &:focus{
+      border-color: $color-primary;
+      @extend %labelUp;
+    }
+    @include placeholder(transparent)
+}

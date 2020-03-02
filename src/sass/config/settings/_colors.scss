@@ -1,0 +1,69 @@
+/* 
+  Brand  Colors 
+*/
+$color-primary       : #753bbd;
+$color-secondary     : #b69969;
+$color-white         : #fcfcfc;
+$color-dark          : #272626;
+
+
+/* 
+  Body Colors
+*/
+$color-text-dark        : #414040;
+$color-text-light       : snow;
+$color-background-dark  : #1a1919;
+$color-background-light : #fafafa;
+/*
+Gradient
+*/
+$color-gradient-primary   : linear-gradient(135deg, lighten($color-primary,10%),$color-primary);
+$color-gradient-secondary : linear-gradient(135deg, lighten($color-secondary,10%),$color-secondary);
+
+/* 
+  Colors
+*/
+
+$color-ice           : #F5F5F5;
+$color-silver        : #e7e7e7;
+$color-dark-middle   : #484747;
+$color-grey          : #aaaaaa;
+$color-grey-dark     : #807f7f;
+$color-grey-light    : #fbfbfb;
+$color-white-medium  : #f0f0f0;
+
+/*
+ Box-Shadowns
+*/
+$color-box-dark      : #0d0d0d; 
+$color-box-light     : #272626; 
+
+/**
+ * Alerts boxes
+ */
+ $success-text       : #3c763d !default;
+ $success-background : #dff0d8 !default;
+ $success-border     : darken($success-background, 5%) !default;
+ 
+ $info-text          : #31708f !default;
+ $info-background    : #d9edf7 !default;
+ $info-border        : darken($info-background, 7%) !default;
+ 
+ $warning-text       : #b8a435 !default;
+ $warning-background : #faf2cc !default;
+ $warning-border     : darken($warning-background, 15%) !default;
+ 
+ $danger-text        : #bb2a27 !default;
+ $danger-background  : #f2dede !default;
+ $danger-border      : darken($danger-background, 5%) !default;
+ 
+/*
+  Social Media Colors
+ */
+ $color-facebook  : #526cac !default;
+ $color-google    : #d34b37 !default;
+ $color-instagram : #C13584 !default;
+ $color-linkedin  : #0286be !default;
+ $color-rss       : #f9a600 !default;
+ $color-twitter   : #1ebaec !default;
+ $color-youtube   : #c42232 !default;

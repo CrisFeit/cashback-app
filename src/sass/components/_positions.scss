@@ -1,0 +1,14 @@
+
+%flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+%flex-column-center{
+  @extend %flex-center;
+  flex-direction: column;
+}
+%centralize{
+  margin: 0 auto;
+  text-align: center;
+}

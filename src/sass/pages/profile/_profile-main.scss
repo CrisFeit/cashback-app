@@ -1,0 +1,15 @@
+.dashboard{
+  &>.profile{
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: auto;
+    overflow-y: auto;
+
+    .loading-wrap {
+      @extend %loadingBar-wrap;
+      .loading-bar {
+        @extend %loadingBar-light;
+      }
+    }
+  }
+}

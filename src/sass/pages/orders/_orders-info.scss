@@ -1,0 +1,44 @@
+.dashboard {
+  &>.orders {
+    &>.info {
+      @extend %box-shadow-light;
+      @extend %box-dark;
+      @extend %flex-center;
+      text-shadow: 0 0 5px $color-text-dark;
+      border-radius: 20px;
+      width: 100%;
+      flex-wrap: wrap;
+      padding: .5em 1em;
+      margin: 0.2em auto;
+      font-size: rem(19);
+      z-index: z('panel');
+      margin-bottom: auto;
+
+      .info-text {
+        text-align: center;
+        margin: auto;
+      }
+
+      .cashback {
+        @extend %flex-center;
+        justify-content: space-between;
+        width: 100%;
+
+        &-text,
+        &-value {
+          margin: 0.2em;
+          color: $success-text;
+          text-shadow: 0 0 3px lighten($success-text, 5%);
+        }
+      }
+
+      .loading-wrap {
+        @extend %loadingBar-wrap;
+
+        .loading-bar {
+          @extend %loadingBar;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+
+.tec-media {
+  .tec-link {
+    @extend %icons-social;
+    &.sass {
+      &:before {
+        content: fa-content($fa-var-sass);
+      }
+    }
+    &.vue {
+      &:before {
+        content: fa-content($fa-var-vuejs);
+      }
+    }
+  }
+  .regular-link{
+    @extend %icons;
+    &.firebase {
+      &:before {
+        content: fa-content($fa-var-database);
+      }
+    }
+  }
+}

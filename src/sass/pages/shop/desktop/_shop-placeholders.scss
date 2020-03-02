@@ -1,0 +1,70 @@
+
+@mixin under-line{
+  &::after{
+    content: "";
+    display: block;
+    height: 5px;
+    margin: auto;
+    padding: 5px 0;
+    width: 100%;
+    background: white linear-gradient(to right,white, $filter-gold, white) center/ 100%  1px no-repeat;
+  }
+}
+
+@mixin hover-default{
+  &:hover{
+    box-shadow: 0 0 0.5em $filter-hover-dark;
+  }
+}
+
+@mixin filters-box{
+  height: auto;
+  padding: 0 0.4em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+@mixin filters-title{
+  font-size: calc(17rem/16);
+  height: max-content;
+  color: $filter-dark-middle;
+  font-weight: bold;
+}
+@mixin filters-selectors{
+  display: flex;
+  width: 100%;
+  font-size: calc(12rem/16);
+  color: $filter-dark-middle;
+  align-self: flex-start;
+}
+@mixin filters-label{
+  width: auto;
+  height: auto;
+  cursor: pointer;
+  margin: 0.5em;
+  padding: 0.3em 0.5em;
+  box-sizing: border-box;
+  border-radius: 30px;
+  white-space: nowrap;
+}
+@mixin scroll-bar{
+  &::-webkit-scrollbar {
+    width: 0.5em;
+    height: 0.5em;
+    background-color: #fff;
+  }
+  &::-webkit-scrollbar-thumb {
+    border: 0.5em solid $filter-brand;
+    border-radius: 45px;
+  }
+}
+
+.filter__cleaner{
+  height: max-content;
+  padding: 0.3em 0.5em;
+  @include hover-default;
+  font-size: calc(13rem/16);
+  &:active{
+    background-color: $filter-brand;
+  }
+}

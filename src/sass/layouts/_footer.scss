@@ -1,0 +1,57 @@
+.footer {
+  margin: auto 0 0 0 ;
+  grid-column-start: 1;
+  grid-column-end: 13;
+  display: flex;
+  // flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column-reverse;
+  align-items: center;
+  color: $color-text-light;
+  background-color: $color-background-dark;
+  
+  @include breakpoint(desktop){
+    margin: 0;
+    grid-row-start: 19;
+    grid-row-end: 21;
+    justify-content: space-between;
+    flex-direction: row;
+  } 
+  &>.company {
+    display: flex;
+    &:hover{
+      transform: scale(1.1);
+    }
+    .company-logo{
+      margin: auto auto auto 3px;
+
+      @include breakpoint(desktop) {
+        // flex-basis: 100%;
+        max-height: -webkit-fill-available;
+      }
+    }
+  }
+  
+  &>.social {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    .social-media{
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      margin: 1.5em auto;
+      @include breakpoint(desktop) {
+        width: auto;
+        margin-left: 0.2em ;
+        display: block;
+        }
+      }
+    }
+    .link {
+      margin-left: 1em;
+      @extend %icons-round;
+      @extend %icons-flat;
+    }
+}

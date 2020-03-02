@@ -1,0 +1,36 @@
+.nav-box{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  -webkit-appearance: none;
+  background-color: white;
+  left: 0;
+  z-index: 10;
+  bottom: 100%;
+  transition: transform .3s;
+  transform-origin: bottom;
+  transform: scaleY(0);
+  overflow-y: auto;
+  max-height: 95vh;
+}
+
+.filters__box{
+  &--open{
+    transform: scaleY(1);
+  }
+}
+
+.filter__block{
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 8;
+}
+
+.filter__item{
+ width: 100%;
+ height: auto;
+}

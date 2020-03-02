@@ -1,0 +1,15 @@
+.trees__img{
+  // Maquiagem
+  &[title*="boca"]{
+    background-image: url('http://edbr.vteximg.com.br/arquivos/trees-thumbs.png');
+  }
+  &[title*="olhos"]{
+    background-image: url('http://edbr.vteximg.com.br/arquivos/category-olhos.png');
+  }
+  &[title*="rosto"]{
+    background-image: url('http://edbr.vteximg.com.br/arquivos/category-rosto.png');
+  }
+  &[title*="unhas"]{
+    background-image: url('http://edbr.vteximg.com.br/arquivos/category-unhas.png');
+  }
+}
