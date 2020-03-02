@@ -38,7 +38,7 @@ export default {
   },
   computed: {
     request(){
-        return `/api/${this.categories}.json`
+        return `api/${this.categories}.json`
     },
     isMobile(){
       return window.screen.width < 768

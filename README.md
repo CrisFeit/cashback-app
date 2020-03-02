@@ -1,4 +1,4 @@
-# agent-app
+# cashback-app
 
 ## Project setup
 ```

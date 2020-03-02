@@ -1,7 +1,7 @@
 <template>
     <header class="header">
         <router-link class="logo" :to="{name: !user ? 'Home' : 'Shop'}">
-          <img class="logo-img" src="/img/logo-eudora-white.png">
+          <img class="logo-img" src="img/logo-eudora-white.png">
         </router-link>
             <router-link class="link button-login"  v-if="!user" :to="{ name: 'Home' }">Login</router-link>
             <router-link class="link button-signup" v-if="!user" :to="{ name: 'Signup' }">Cadastro</router-link>
