@@ -63,6 +63,7 @@
     }
     .info-info{
       vertical-align: middle;
+      margin: auto;
       @include breakpoint(desktop){
         flex: 2.5 2;
         }
@@ -84,6 +85,7 @@
       flex-wrap: wrap;
       justify-content: center;
       font-weight: bold;
+      margin: auto;
       .social-media{
         width: 100%;
         display: flex;
