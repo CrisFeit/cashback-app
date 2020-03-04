@@ -16,27 +16,6 @@
     }
 }
 
-.product__wishlist{
-  position: absolute;
-  left: 2%;
-  top: 2%;
-  z-index: 2;
-  cursor: pointer;
-    &:hover{
-      font-weight: bolder;
-    }
-    .lnc-icon:after{
-      font-family: var(--ui-icon-font);
-      content: '\e91b';
-      display: block;
-      font-size: calc(25rem/16);
-      color: $filter-brand;
-    }
-    .lnc-label{
-      display: none !important;
-    }
-}
-
 .product__link{
   width: 100%;
   display: flex;

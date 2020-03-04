@@ -21,6 +21,16 @@
       &:hover{
         font-weight: bolder;
       }
+      
+      &:active,&:target,&.-disabled{
+        box-shadow:  inset .3em .3em .3em darken($color-box-dark,7%), 
+        inset -.3em -.3em .3em lighten($color-primary,12%);  
+      }
+      &.-disabled{  
+        opacity: 0.5;
+        cursor: not-allowed;
+        pointer-events: none;
+      }
 .icons{
   &:before{
     content: fa-content($fa-var-shopping-bag);
