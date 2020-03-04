@@ -50,6 +50,17 @@ export default {
           });
         })    
       })
+    }else{
+        auth.signOut()
+        .then( () => {
+          this.$router.push({ name : 'Home'})
+          userAuth.delete()
+          .then(()=>{
+            return    
+          }).catch(function(err) {
+                console.log(err);
+          });
+        }) 
     }
     }
   },
