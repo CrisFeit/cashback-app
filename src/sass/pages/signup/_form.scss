@@ -1,0 +1,14 @@
+.signup{
+  .input{
+    &.cpf{
+      & + label{
+        top: 5% ;
+      }
+      &:focus{
+          & + label{
+            top: 0 ;
+          }
+      }
+    }
+  }
+}

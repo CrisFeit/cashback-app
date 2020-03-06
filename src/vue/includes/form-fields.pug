@@ -1,9 +1,9 @@
 mixin formFields(props)
   fieldset.field
-    input(:class="{'input':true,'-labelUp': email != false }"  type="email" name="email" v-model="email" v-on:focus="feedback = null")
+    input(:class="{'input':true,'-labelUp': email  }"  type="email" name="email" v-model="email" v-on:focus="feedback = null")
     label(class="label" for="email") Digite seu Email
   fieldset.field
-    input(:class="{'input':true,'-labelUp': password != false }"  type="password" name="password" v-model="password"    v-on:focus="feedback = null")
+    input(:class="{'input':true,'-labelUp': password  }"  type="password" name="password" v-model="password"    v-on:focus="feedback = null")
     label(class="label" for="password") Digite sua Senha
   p(:class="{'feedback':true ,'-danger':danger}" v-text="feedback")
   fieldset.field

@@ -8,11 +8,11 @@
             include ../includes/loading-bar.pug
 
             fieldset.field
-              <input :class="{'input':true,'-labelUp': name != false }" type="name" name="name" maxlength="50" v-on:keyup="mask($event.target,'0',$event,/[^a-zA-Z\s]+/g)" v-model="name" v-on:focus="feedback = null" />
+              <input :class="{'input':true,'-labelUp': name }" type="name" name="name" maxlength="50" v-on:keyup="mask($event.target,'0',$event,/[^a-zA-Z\s]+/g)" v-model="name" v-on:focus="feedback = null" />
               label(class="label" for="name") Digite seu Nome
 
             fieldset.field
-              <input :class="{'input':true,'-labelUp': cpf != false }" type="text" name="cpf"  minlength=14 maxlength="14" v-on:keyup="mask($event.target,'000.000.000-00',$event,/[^\d]+/g)" v-model="cpf"  v-on:focus="feedback = null" />
+              <input :class="{'input cpf':true,'-labelUp': cpf }" type="text" name="cpf"  minlength=14 maxlength="14" v-on:keyup="mask($event.target,'000.000.000-00',$event,/[^\d]+/g)" v-model="cpf"  v-on:focus="feedback = null" />
               label(class="label" for="cpf") Digite seu Cpf
               
               include ../includes/form-fields.pug
