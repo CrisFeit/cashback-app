@@ -16,6 +16,9 @@
         div.profile-item Id 
           span.profile-text  {{user.user_id}}
         button(:class="{'profile-button':true,'cancel':true,'-disabled': loading}" v-on:click="deleteProfile()") deletar
+    section.profile-card(v-else)
+      button(:class="{'profile-button':true,'cancel':true,'-disabled': loading}" v-on:click="deleteProfile()") deletar
+        
 </template>
 
 <script>
@@ -28,21 +31,20 @@ export default {
   },
   computed: {
     user(){
-      return this.$store.state.user
+      return this.$store.state.user  instanceof Promise ? null : this.$store.state.user  
     }
   },
   methods :{
     deleteProfile(){
       this.loading = true
-      var userAuth = auth.currentUser;
+      let userAuth = auth.currentUser;
       if(this.user){
-
-        db.collection('users').doc(this.user.cpf).delete()
-        .then(()=>{
-          auth.signOut()
-        .then( () => {
-          this.$router.push({ name : 'Home'})
-          userAuth.delete()
+          db.collection('users').doc(this.user.cpf).delete()
+          .then(()=>{
+            auth.signOut()
+          .then( () => {
+            this.$router.push({ name : 'Home'})
+            userAuth.delete()
           .then(()=>{
             return    
           }).catch(function(err) {
@@ -52,20 +54,21 @@ export default {
       })
     }else{
         auth.signOut()
-        .then( () => {
+        .then(()=>{
           this.$router.push({ name : 'Home'})
           userAuth.delete()
-          .then(()=>{
+        .then( () => {
             return    
           }).catch(function(err) {
                 console.log(err);
           });
-        }) 
-    }
+        })
+      }
     }
   },
   created(){
     this.$store.dispatch('emitAuth')
+    
   },
 }
 </script>

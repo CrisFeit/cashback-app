@@ -38,17 +38,22 @@ export default new Vuex.Store({
   actions: {
     async emitAuth(context){
       let userId   = await auth.currentUser.uid
-      let userData = db.collection("users").where('user_id','==',userId).get().then(snapshot =>{
+      let userData = db.collection("users").where('user_id','==',userId).get()
+      .then(snapshot =>{
         snapshot.forEach(doc => {
             userData = doc.data()
         });
         context.commit('changeUser', userData)
+      }).catch(err => {
+        console.log(err)
       })
+
     },
     storeOrders(context){
       let userId = auth.currentUser.uid
       db.collection('orders').where('user_id','==',userId).onSnapshot(snapshot =>{
         context.commit('updateOrders', snapshot.docChanges().map(change => {
+          console.log(change);
           return {
               id    : change.doc.id,
               data : change.doc.data()
