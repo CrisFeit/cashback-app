@@ -36,16 +36,22 @@
         box-shadow:  inset .3em .3em .3em darken($color-box-dark,7%), 
         inset -.3em -.3em .3em lighten($color-primary,12%);  
       }
-      &.-disabled{  
-        opacity: 0.5;
-        cursor: not-allowed;
-        pointer-events: none;
-      }
     
   &>.icons{
     &:before{
       content: fa-content($fa-var-shopping-bag);
       margin-right: 1em;
+    }
+  }
+  
+  &.-disabled{
+    cursor: not-allowed;
+    pointer-events: none;
+    .icons{
+      &:before{
+        content: fa-content($fa-var-check-circle);
+        margin-right: 1em;
+      }
     }
   }
 }

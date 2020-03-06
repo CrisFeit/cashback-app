@@ -17,11 +17,15 @@
       <a class="product__link" >
         <img class="product__img"  :src="cut(product.available.img)" />
         <section :class="{'product__buy':true,'product__buy--open':activePanel == product.id}">
-          <button  class="product__buy-button"
+          <button  class="product__buy-button -disabled"
+                    v-if="bag.has(product.available)"
+          ><i class="icons"></i>Adicionado
+          </button>
+          <button v-else class="product__buy-button"
                    v-on:click="addItem(product.available)"
           ><i class="icons"></i>Adicionar
-              
           </button>
+
         </section>
       </a>
       <h4  class="product__name">{{ product.available.name }} </h4>
@@ -74,9 +78,10 @@
              </template>
             </div>
           </div>
-              <button v-if="chosen.itemId == product.available.id" class="thumb__buy product__buy-button"
+              <button v-if="chosen.itemId == product.available.id" 
+                      :class="{'thumb__buy':true ,'product__buy-button':true ,'-disabled':bag.has(product.available)}"
                       v-on:click="addItem(product.available)"
-              ><i class="icons"></i>Adicionar
+              ><i class="icons"></i>{{bag.has(product.available) ? 'Adicionado'  : 'Adicionar'}}
               </button>
         </section>
       </a>
@@ -112,7 +117,7 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex';
+import { mapState,mapMutations } from 'vuex';
 
 export default {
   name  : 'shelfs',
@@ -130,6 +135,7 @@ export default {
     }
   },
   computed:{
+      ...mapState(['bag']),
     destuct(){
         return this.products.map(item => {
           return {
@@ -218,7 +224,7 @@ export default {
     erase(){
         this.activePanel = ''
         this.chosen      = {}
-      }
+    }
   }
 }
 

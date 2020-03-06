@@ -16,10 +16,15 @@
         <img class="product__img"  :src="cut(product.available.img)" />
       </a>
         <section   class="product__buy">
-          <button  class="product__buy-button js--shelf-buy"
-                  v-on:click="addItem(product.available)"
+          <button  class="product__buy-button -disabled"
+                    v-if="bag.has(product.available)"
+          ><i class="icons"></i>Adicionado
+          </button>
+          <button v-else class="product__buy-button"
+                   v-on:click="addItem(product.available)"
           ><i class="icons"></i>Adicionar
           </button>
+
         </section>
       <h4  class="product__name">{{ product.available.name }} </h4>
       <div class="product__info">
@@ -69,9 +74,9 @@
         </section>
         <i class="thumb__selection-shadow-down"></i>
          <section   class="product__buy">
-              <button class="thumb__buy product__buy-button js--shelf-buy"
+              <button :class="{'thumb__buy':true ,'product__buy-button':true ,'-disabled':bag.has(product.available)}"
                       v-on:click="addItem(product.available)"
-              ><i class="icons"></i>Adicionar
+              ><i class="icons"></i>{{bag.has(product.available) ? 'Adicionado'  : 'Adicionar'}}
               </button>
          </section>
 
@@ -107,7 +112,7 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex';
+import { mapState,mapMutations } from 'vuex';
 export default {
   name  : 'shelf-mobile',
   props : {
@@ -124,6 +129,7 @@ export default {
     }
   },
   computed:{
+    ...mapState(['bag']),
     destuct(){
         return this.products.map(item => {
           return {

@@ -5,7 +5,7 @@
       div.info-warning-title
         | Teste Desenvolvedor Front End - Grupo Boticário
       div.info-warning-text
-        | *Esta aplicação não tem validade nem vinculo oficial com &copy;Grupo Boticário
+        | *Esta aplicação não tem validade nem vínculo oficial com &copy;Grupo Boticário
     section.info-card
       div.info-top
         div.info-img

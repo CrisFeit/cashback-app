@@ -16,7 +16,7 @@
   border-radius: 30px;
   padding: 3% 10%;
   font-size: calc(14rem/16);
-  cursor: pointer;
+  outline: none;
   
       &:hover{
         font-weight: bolder;
@@ -26,17 +26,23 @@
         box-shadow:  inset .3em .3em .3em darken($color-box-dark,7%), 
         inset -.3em -.3em .3em lighten($color-primary,12%);  
       }
-      &.-disabled{  
-        opacity: 0.5;
+      .icons{
+        &:before{
+          content: fa-content($fa-var-shopping-bag);
+          margin-right: 1em;
+        }
+      }
+      &.-disabled{
         cursor: not-allowed;
         pointer-events: none;
+
+        .icons{
+          &:before{
+            content: fa-content($fa-var-check-circle);
+            margin-right: 1em;
+          }
+        }
       }
-.icons{
-  &:before{
-    content: fa-content($fa-var-shopping-bag);
-    margin-right: 1em;
-  }
-}
 }
 .thumb__container{
   position: absolute;

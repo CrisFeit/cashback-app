@@ -10,7 +10,7 @@ export default new Vuex.Store({
     user   :  null,
     bag    :  new Set(),
     orders :  []
-    },
+  },
 
   mutations: {
     changeUser(state,userData){
@@ -47,7 +47,6 @@ export default new Vuex.Store({
       }).catch(err => {
         console.log(err)
       })
-
     },
     storeOrders(context){
       let userId = auth.currentUser.uid
