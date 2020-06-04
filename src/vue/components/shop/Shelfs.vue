@@ -62,6 +62,7 @@
                     :for="thumb.itemId"
                     :title=" thumb.hasOwnProperty('Escolha a Cor') ? thumb['Escolha a Cor'][0] : thumb.name"
                     :class="{'thumb__label':true,'thumb__label--active': product.available.id == thumb.itemId}"
+                    v-on:mouseenter="chosen = {},product.available = changeSku(thumb)"
               >
                 <figure class="thumb__figure" >
                   <i    class="thumb__img"
@@ -72,7 +73,7 @@
                         :id="thumb.itemId"
                         :value="thumb"
                          v-model="chosen"
-                         v-on:change="product.available = changeSku(thumb) "
+                         v-on:change="product.available = changeSku(thumb)"
                 >
               </label>
              </template>
