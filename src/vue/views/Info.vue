@@ -2,8 +2,6 @@
   main.main.info
     h3.page-title Informações
     div.info-warning
-      div.info-warning-title
-        | Teste Desenvolvedor Front End - Grupo Boticário
       div.info-warning-text
         | *Esta aplicação não tem validade nem vínculo oficial com &copy;Grupo Boticário
     section.info-card
