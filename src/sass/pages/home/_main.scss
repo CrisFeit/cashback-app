@@ -6,7 +6,7 @@
   overflow: hidden;
   &>.main{
     display: flex;
-    overflow-y: auto;
+    overflow-y: scroll;
     grid-row-end: 21;
     background: url('../assets/img/banner-home-mobile.jpg') center center / cover no-repeat;
       @include breakpoint(desktop){

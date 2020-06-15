@@ -2,7 +2,7 @@
   grid-column-start: 1;
   grid-column-end: 13;
   grid-row-start: 1;
-  grid-row-end: 4;
+  grid-row-end: 3;
   position: relative;
   display: flex;
   align-items: center;
@@ -32,6 +32,7 @@
       .link{
         position: absolute;
         margin: auto;
+        
         &.button-login,&.button-user{
           left: 1em;  
           @include breakpoint(desktop){
@@ -50,6 +51,7 @@
           align-items: center;
               @include breakpoint(desktop){
                 height: 100%;
+                flex-wrap: nowrap;
               }
           &:hover{
             text-shadow: 0 0 2px $color-text-light;
@@ -58,6 +60,9 @@
             width: 100%;
             margin: auto;
             font-size: rem(15);
+            @include breakpoint(desktop){
+              margin: auto 1em;
+            }
           }
           .user-avatar{
             font-size: rem(25);

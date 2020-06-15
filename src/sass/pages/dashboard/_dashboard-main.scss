@@ -15,7 +15,7 @@
       margin-bottom: 1em;
         grid-column-start: 2;
         grid-column-end: 13;
-        grid-row-start: 4;
+        grid-row-start: 3;
         grid-row-end: 19;
         overflow-y: auto;
         @include scrollbar(15px,$color-primary);
@@ -30,7 +30,7 @@
     @include breakpoint(desktop){
       grid-column-start: 1;
       grid-column-end: 3;
-      grid-row-start: 4;
+      grid-row-start: 3;
       grid-row-end: 19;
 
       &:hover + .main {
@@ -51,8 +51,8 @@
     }
   }
 }
-    @include breakpoint(desktop){
-      body {
-        overflow: initial;
-      }
+  @include breakpoint(desktop){
+    body {
+      overflow: initial;
+    }
 }

@@ -6,6 +6,7 @@
     "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
+    "test:end": "cypress open",
     "lint": "vue-cli-service lint",
     "deploy": "gh-pages -d dist"
   },
@@ -32,6 +33,7 @@
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/test-utils": "1.0.0-beta.31",
     "babel-eslint": "^10.0.3",
+    "cypress": "^4.8.0",
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-vue": "^6.1.2",
