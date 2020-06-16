@@ -32,10 +32,13 @@
       grid-column-end: 3;
       grid-row-start: 3;
       grid-row-end: 19;
-
+      
       &:hover + .main {
         grid-column-start: 3;
       } 
+    }
+    @include device(tablet){
+      grid-column-end: 5;
     }
   }
   .page-title{
