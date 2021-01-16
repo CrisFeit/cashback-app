@@ -13,7 +13,7 @@
   "author": "@cristianosoldier",
   "homepage": "https://crisfeit.github.io/cashback-app/",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "core-js": "^3.6.4",
     "firebase": "^7.8.1",
     "gh-pages": "^2.2.0",
